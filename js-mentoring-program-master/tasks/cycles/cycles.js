@@ -60,7 +60,7 @@ console.log('factorial is ' + factorial);
 {
   const substr = ["I", " love", " JS"];
   let concat='';
-  for (i=0;i<(substr.length);i++){
+  for (let i=0;i<(substr.length);i++){
     concat=concat + substr[i];
   }
   console.log("Task 2 (variant 1): " + concat);
