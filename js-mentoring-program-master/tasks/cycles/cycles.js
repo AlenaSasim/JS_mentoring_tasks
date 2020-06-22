@@ -27,14 +27,14 @@
 
 //for
 console.log('Task 1: variant 1 (for)')
-for (j=0;j<(i-1);j++) {
+for (let j=0;j<(i-1);j++) {
   factorial=factorial*(j+1);
 }
 console.log('factorial is ' + factorial);
 
 //while
 // console.log('Task 1: variant 2 (while)')
-// j=0;
+// let j=0;
 // while (j<(i-1)) {
 //   factorial=factorial*(j+1);
 //   j++;
@@ -43,7 +43,7 @@ console.log('factorial is ' + factorial);
 
 // do ... while
 // console.log('Task 1: variant 3 (do ... while)')
-// j=0;
+// let j=0;
 // do {
 //   factorial=factorial*(j+1);
 //   j++;
@@ -63,19 +63,36 @@ console.log('factorial is ' + factorial);
   for (i=0;i<(substr.length);i++){
     concat=concat + substr[i];
   }
-  console.log("Task 2: " + concat);
+  console.log("Task 2 (variant 1): " + concat);
 }
+
+{
+  const substr = ["I", " love", " JS"];
+  let concat='';
+  for (let element of substr) {
+    concat += element;
+  }
+  console.log("Task 2 (variant 2): " + concat);
+}
+
 
 /**
  * calculate a total of income of certain person
  */
-// {
-//   const personIncomes = {
-//     salary: 1985,
-//     rent: -600,
-//     interestOnDeposit: 250,
-//     otherExpences: -300
-//   };
-// }
+{
+  const personIncomes = {
+    salary: 1985,
+    rent: -600,
+    interestOnDeposit: 250,
+    otherExpences: -300
+  };
+
+let totalIncome = 0;
+
+for (let incomes in personIncomes) {
+  totalIncome += personIncomes[incomes];
+}
+console.log('Task 3: total income is ' + totalIncome);
+}
 
 // module.exports = calculateDiscount;
