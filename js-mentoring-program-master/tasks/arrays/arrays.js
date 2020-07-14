@@ -3,6 +3,8 @@
  * @param {Array} chars
  * @return {Array} - char names
  */
+console.log('task 1: ');
+
 function getCharactersNames(chars) {
 }
 
@@ -10,6 +12,8 @@ function getCharactersNames(chars) {
  * print (console.log) ids of all characters
  * @param {Array} chars
  */
+console.log('task 2: ');
+
 function printCharacterNames(chars) {
 }
 
@@ -18,6 +22,8 @@ function printCharacterNames(chars) {
  * @param {Array} chars
  * @return {Array} - non human characters
  */
+console.log('task 3: ');
+
 function getNonHumanCharacters(chars) {
 }
 
@@ -26,6 +32,8 @@ function getNonHumanCharacters(chars) {
  * @param {Array} chars
  * @return {Object} - Jerry object
  */
+console.log('task 4: ');
+
 function getJerryInfo(chars) {
 }
 
@@ -34,6 +42,8 @@ function getJerryInfo(chars) {
  * @param {Array} chars
  * @return {boolean}
  */
+console.log('task 5: ');
+
 function isAllHuman(chars) {
 }
 
@@ -42,6 +52,8 @@ function isAllHuman(chars) {
  * @param {Array} chars
  * @return {boolean}
  */
+console.log('task 6: ');
+
 function isAnyFishPerson(chars) {
 }
 
@@ -50,9 +62,19 @@ function isAnyFishPerson(chars) {
  * @param {Array} arr
  * @return {number} - minimum element index
  */
+
+console.log('task 7: ');
+
 function minItem(arr) {
-    //PLACE YOUR CODE HERE
-}
+
+//console.log(arr.length);
+let minElement=Math.min.apply(null,arr);
+//console.log(minElement);
+return arr.indexOf(minElement);
+};
+
+console.log(minItem([1, 2, 2, -8]));
+
 
 module.exports = {
     getCharactersNames,
