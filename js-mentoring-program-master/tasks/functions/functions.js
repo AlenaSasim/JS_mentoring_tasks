@@ -4,8 +4,7 @@
  */
 console.log('task 1: ');
 
- function add(a, b) {
-
+function add(a, b) {
 	return (a+b);
 };
 
@@ -28,23 +27,18 @@ let human = {
 
 console.log(getFullName (human));
 
- function getFullName(object) {
-	
-	return (object.fullName = object.firstName.concat(' ' + object.lastName));
+function getFullName(object) {
+	return (object.firstName.concat(' ' + object.lastName));
 };
 
 /**
- * write fuction that checks is number is odd
+ * write fuction that checks if number is odd
  * true if odd, false if even
  */
 console.log('task 3: ');
 
 function isOdd(n) {
-
-	if (n%2===0)
-		return (false)
-	else
-		return (true)
+	return (n%2 != 0);
 };
 
 console.log(isOdd(7));
@@ -54,36 +48,20 @@ console.log(isOdd(2));
  * write function that return shortest of words in given array
  * e.g ["one", "two", "three"] should return one
  */
+
 console.log('task 4: ');
 
 function getShortest(wordArray) {
-
-let arrLength = [];
-for (let i = 0; i < wordArray.length; i++) 
-	{
-		arrLength[i] = wordArray[i].length;
-	};
-	
-console.log(arrLength);
-let minElement=Math.min.apply(null,arrLength);
-console.log(minElement);
-
-let shortest=[];
-let i=0;
-
-if (arrLength[i]===minElement)
-{console.log(wordArray[i])}
-else { 
-do {
-	shortest = wordArray[i+1];
-	i++;
-}
-while (arrLength[i] != minElement);
-console.log(shortest);}
-
+	let shortest = wordArray[0];
+	for (let i = 1; i < wordArray.length; i++) {
+			if (wordArray[i].length<shortest.length) {
+				shortest=wordArray[i];
+			}
+		}
+	return(shortest);
 };
 
-getShortest(["one", "twssd", "three", "1"]);
+console.log(getShortest(["one", "twssd9", "three", "1"]));
 
 
 /**
@@ -94,10 +72,9 @@ getShortest(["one", "twssd", "three", "1"]);
 console.log('task 5: ');
 
 function getGoogle(n) {
-
-let letter='o';
-return('g' + letter.repeat(n) + 'gle');
-}
+	let letter='o';
+	return('g' + letter.repeat(n) + 'gle');
+};
 
 console.log(getGoogle(5));
 
@@ -112,18 +89,16 @@ console.log(getGoogle(5));
  */
 console.log('task 6: ');
 
- function getUser(firstName='null', lastName='null', age='null') {
-
+function getUser(firstName='null', lastName='null', age='null') {
 	let human = {};
 	human.firstName = firstName;
 	human.lastName = lastName;
 	human.age = age;
+	return(human);
+};
 
-	console.log(human);
-}
-
-getUser("John", "Dou", 42);
-getUser("John", "Dou");
+console.log(getUser("John", "Dou", 42));
+console.log(getUser("John", "Dou"));
 
 /**
  * write function that calculates total path traveled.
@@ -133,18 +108,15 @@ getUser("John", "Dou");
 
 console.log("task 7:");
 function getTotalPath(path) {
-
 	let totalPath=0;
-	for (let i = 0; i < (path.length); i++) 
-	{	
+	for (let i = 0; i < (path.length); i++) {	
 		totalPath += path[i].distance;
 	}
-	console.log(totalPath);
-}
+	return (totalPath);
+};
 
 let arr=[{direction: "Kiyv - Minsk", distance: 567}, {direction: "Kiyv - Paris", distance: 2402}];
-
-getTotalPath (arr);
+console.log(getTotalPath (arr));
 
 
 /**
@@ -160,7 +132,7 @@ function discountFunction(amount) {
 	return function(percentage) {
 		return (amount * percentage/100);
 	};
-}
+};
 
 const discount100x10=discountFunction(100);
 console.log(discount100x10(10));
@@ -183,16 +155,20 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		console.log(Object.keys(myObject));
+		//console.log(Object.keys(myObject));
+		let  keys = Object.keys(this);
+		for (let i = 0; i < (keys.length); i++) {	
+			console.log(keys[i]);
+		}
 	},
 	call() {
-		console.log('My name is ' + this.name + ' ' + this.lastName + ' and I am ' + this.age + ' years old. My best friend is ' + this.friends[2]);
+		return ('My name is ' + this.name + ' ' + this.lastName + ' and I am ' + this.age + ' years old. My best friend is ' + this.friends[2]);
 	}
 
 };
 
 myObject.keys();
-myObject.call();
+console.log(myObject.call());
 
 module.exports = {
 	add,
