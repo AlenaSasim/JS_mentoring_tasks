@@ -6,7 +6,10 @@
 console.log("task 1:");
 
 function reverseString(str) {
-  return str.split("").reverse().join("");
+    if (typeof str ==="string")
+        return str.split("").reverse().join("");
+    else 
+        return ('This is not a string!'); 
 }
 
 let str='gnirts a ton si sihT';
@@ -20,20 +23,21 @@ console.log(reverseString(str));
 console.log("task 2:");
 
 function centuryFromYear(year) {
-  if (year<=100) {
-      console.log('1st century');
-  }
-  else if (year%100==0) {
-      console.log(Math.trunc(year/100) + ' century');
-  }
-  else if (year%100!=0) {
-      console.log(Math.trunc(year/100) + 1 + ' century');
-  }
-  else
-      console.log('error: entered value is mot supported')
+    let century=Math.trunc(year/100);
+    if (year<=100) {
+        return('1st');
+    }
+    else if (year%100==0) {
+        return(century);
+    }
+    else if (year%100!=0) {
+        return(century + 1);
+    }
+    else
+        return('error: entered value is mot supported')
 }
 
-centuryFromYear(2013);
+console.log(centuryFromYear(2013));
 
 /**
  * Calculate count of the provided char in the string
@@ -43,10 +47,16 @@ centuryFromYear(2013);
 console.log("task 3:");
 
 function strCount(str, char) {
-//  console.log(str.split(""));
+    let count = 0;
+    for(let i=0; i<str.length; i++) {
+      if (str[i]==char)
+        { count++;
+        }
+    }
+        return count;
 }
 
-strCount('    alena sasim');
+console.log(strCount('alena sasim', 'k'));
 
 /**
  * We need to reduce the length of the string or truncate it if it is longer
@@ -57,22 +67,21 @@ strCount('    alena sasim');
 console.log("task 4:");
 
 function truncateString(str, num) {
-  let newArr=[];
-  newArr= str.split("");
-  let length=newArr.length;
-//console.log(newArr);
- if (newArr.length > num) {
-let x = newArr.shift();
-//console.log (x);
- newArr.push(x);
-//console.log(newArr);
- console.log(newArr.join(""));}
-else console.log(str);
+    let newArr=[];
+    newArr= str.split("");
+    let length=newArr.length;
+    //console.log(newArr);
+    if (newArr.length > num) {
+        newArr=newArr.slice(0, num);
+        newArr.push('...');
+        //console.log(newArr);
+        return(newArr.join(""));}
+    else 
+        return(str);
 };
 
-
-truncateString('alena sasim', 6);
-truncateString('alena sasim', 11);
+console.log(truncateString('alena sasim', 5));
+console.log(truncateString('alena sasim', 11));
 
 /**
  * replace 10 with 'ten' word
@@ -84,8 +93,11 @@ truncateString('alena sasim', 11);
 console.log("task 5:");
 
 function replace10(text) {
-
+    let newStr = text.replace(/10/g, "ten");
+    return newStr;
 }
+
+console.log(replace10("23105410"));
 
 /**
  * replace value in square brackets with CONFIDENTIAL
@@ -97,8 +109,11 @@ function replace10(text) {
 console.log("task 6:");
 
 function replaceConfidential(text) {
-
+    let newStr = text.replace(/\[.*?\]/g, "[CONFIDENTIAL]");
+    return newStr;
 }
+
+console.log(replaceConfidential("lorem [ipsum] si [dolori]"));
 
 module.exports = {
   reverseString,

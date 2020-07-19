@@ -3,10 +3,15 @@
  * @param {Array} chars
  * @return {Array} - char names
  */
+const chars = require('./characters.json');
+
 console.log('task 1: ');
 
 function getCharactersNames(chars) {
+    return chars.map(element => element.name);
 }
+
+console.log(getCharactersNames(chars));
 
 /**
  * print (console.log) ids of all characters
@@ -15,7 +20,11 @@ function getCharactersNames(chars) {
 console.log('task 2: ');
 
 function printCharacterNames(chars) {
+    chars.forEach(element => {console.log(element.name);});
 }
+
+printCharacterNames(chars);
+
 
 /**
  * return an array of non-human characters
@@ -25,7 +34,10 @@ function printCharacterNames(chars) {
 console.log('task 3: ');
 
 function getNonHumanCharacters(chars) {
+    return chars.filter(element => element.species!="Human");
 }
+
+console.log(getNonHumanCharacters(chars));
 
 /**
  * return info about character named 'Jerry Smith'
@@ -34,8 +46,12 @@ function getNonHumanCharacters(chars) {
  */
 console.log('task 4: ');
 
-function getJerryInfo(chars) {
+function getJerryInfo(chars) {    
+    let newArr=chars.filter(element => element.name==="Jerry Smith"); 
+    return newArr[0];
 }
+
+console.log(getJerryInfo(chars));
 
 /**
  * check if all characters are human. return true if all, false if not
@@ -45,7 +61,10 @@ function getJerryInfo(chars) {
 console.log('task 5: ');
 
 function isAllHuman(chars) {
+    return chars.every(element => element.species==="Human");
 }
+
+console.log(isAllHuman(chars));
 
 /**
  * check if there are any Fish-Person characters. return true if any, false if not
@@ -55,7 +74,10 @@ function isAllHuman(chars) {
 console.log('task 6: ');
 
 function isAnyFishPerson(chars) {
+    return chars.some(element => element.type==="Fish-Person");
 }
+
+console.log(isAnyFishPerson(chars));
 
 /**
  * 1. Write a method to find an index of minimal item from an array;
@@ -66,11 +88,10 @@ function isAnyFishPerson(chars) {
 console.log('task 7: ');
 
 function minItem(arr) {
-
-//console.log(arr.length);
-let minElement=Math.min.apply(null,arr);
-//console.log(minElement);
-return arr.indexOf(minElement);
+    //console.log(arr.length);
+    let minElement=Math.min.apply(null,arr);
+    //console.log(minElement);
+    return arr.indexOf(minElement);
 };
 
 console.log(minItem([1, 2, 2, -8]));
