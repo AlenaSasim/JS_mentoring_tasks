@@ -47,8 +47,7 @@ console.log(getNonHumanCharacters(chars));
 console.log('task 4: ');
 
 function getJerryInfo(chars) {    
-    let newArr=chars.filter(element => element.name==="Jerry Smith"); 
-    return newArr[0];
+    return newArr=chars.find(element => element.name==="Jerry Smith"); 
 }
 
 console.log(getJerryInfo(chars));
