@@ -5,14 +5,14 @@
 const person = { //put you object here
     firstName: 'Alena', 
     lastName: 'Sasim',
-    getFullName(name, surname) {
-        this.firstName = name;
-        this.lastName = surname;
+    getFullName() {
+        this.firstName;
+        this.lastName;
         return (`${this.firstName} ${this.lastName}`);
     }
 }
 
-//console.log(person.getFullName('lena', 'sasim'));
+//console.log(person.getFullName());
 
 
 /**
@@ -20,24 +20,24 @@ const person = { //put you object here
  * set person as prototype of student 
  */
 const student = { //put you object here
-    grade: '',
-    getGrade (n) {
-        this.grade = n;
+    grade: '11',
+    getGrade () {
+        this.grade;
         return this.grade;
     }
 }
 
 Object.setPrototypeOf(student, person);
-//console.log(student.getGrade(11));
-//console.log(student.getFullName('yuriy', 'ivanov'));
+//console.log(student.getGrade());
+//console.log(student.getFullName());
 
 /**
  * create new instance of student using Object.create
  */
 const student2 = Object.create(student); //put you object here
 
-//console.log(student2.getFullName('alex', 'sidorov'));
-//console.log(student2.getGrade(5));
+//console.log(student2.getFullName());
+//console.log(student2.getGrade());
 
 module.exports = {
     person,
