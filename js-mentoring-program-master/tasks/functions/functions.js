@@ -155,11 +155,28 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
+		// case 1 - Object.keys();
+		
+		//array
 		//console.log(Object.keys(myObject));
-		let  keys = Object.keys(this);
-		for (let i = 0; i < (keys.length); i++) {	
-			console.log(keys[i]);
-		}
+		
+		//separate strings
+		// let  keys = Object.keys(this);
+		// for (let i = 0; i < (keys.length); i++) {	
+		// 	console.log(keys[i]);}
+		
+		//case 2 - for ... in
+		
+		//array
+		//let keys = [];
+		// for(let key in myObject) {
+		// 	keys.push(key);
+		// }
+		// console.log(keys);
+		
+		//separate strings
+		for (let key in myObject) {
+			console.log(`${key}`)}
 	},
 	call() {
 		return ('My name is ' + this.name + ' ' + this.lastName + ' and I am ' + this.age + ' years old. My best friend is ' + this.friends[2]);
