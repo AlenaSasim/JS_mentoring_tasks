@@ -6,8 +6,6 @@ const person = { //put you object here
     firstName: 'Alena', 
     lastName: 'Sasim',
     getFullName() {
-        this.firstName;
-        this.lastName;
         return (`${this.firstName} ${this.lastName}`);
     }
 }
@@ -22,7 +20,6 @@ const person = { //put you object here
 const student = { //put you object here
     grade: '11',
     getGrade () {
-        this.grade;
         return this.grade;
     }
 }
