@@ -6,6 +6,18 @@
  */
 //put your code here
 
+class Person {
+    constructor (name, surname) {
+        this.firstName=name;
+        this.lastName=surname;
+        this.likes =0;
+    }
+    get getFullName() {
+        return (`${this.firstName} ${this.lastName}`);
+    }
+}
+
+
 /**
  * implement class Student that extends Person with:
  * 1) property grade
@@ -14,10 +26,26 @@
  */
 //put your code here
 
-const person = //create instance of class person
-const student = //create instance of class student
+class Student extends Person {
+    constructor (name, surname, grade) {
+        super(name, surname);
+        this.grade=grade;
+    }
+    get getGrade() {
+        return this.grade; 
+    }
+}
+
+const person = new Person ('Alena', 'Sasim');
+console.log(person);
+console.log(person.getFullName);
+
+const student = new Student ('Ilia', 'Ivanow','07');
+console.log(student);
+console.log(student.getFullName);
+console.log(student.getGrade);
 
 module.exports = {
-    person,
-    student
-};
+     person,
+     student
+ };
