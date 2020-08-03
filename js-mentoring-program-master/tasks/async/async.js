@@ -63,7 +63,7 @@ async function handleAsyncAwaitError() {
     console.log(a);
     } 
     catch (err) {
-        console.log(err);
+        throw err;
     }
 }
 
