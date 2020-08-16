@@ -4,7 +4,8 @@
  * 3. Save only those items, where id < 20
  * DOCS: https://www.npmjs.com/package/node-fetch
  */
-const fetch = require('node-fetch');
+
+ const fetch = require('node-fetch');
 const fs = require('fs');
 
 async function ProcessingRequestAsyncAwait() {
@@ -25,4 +26,3 @@ async function ProcessingRequestAsyncAwait() {
 }
 
 ProcessingRequestAsyncAwait();
-

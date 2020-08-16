@@ -33,7 +33,3 @@ function getDocID () {
         }
     return arr;
 }
-
-
-
-
