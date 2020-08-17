@@ -4,4 +4,25 @@
  * 3. Save only those items, where id < 20
  * DOCS: https://www.npmjs.com/package/node-fetch
  */
-const fetch = require('node-fetch');
+
+ const fetch = require('node-fetch');
+const fs = require('fs');
+
+async function ProcessingRequestAsyncAwait() {
+    try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const arrResponse = await response.json();
+        const arrSorted = await sort(arrResponse);
+
+        fs.writeFileSync('response.json',JSON.stringify(arrSorted));
+
+        function sort(arr) {
+            return arr.filter(element => element.id<20);
+        }
+    }
+    catch (err) {
+        throw `UserException: ${err}`;
+    }
+}
+
+ProcessingRequestAsyncAwait();

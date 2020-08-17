@@ -14,3 +14,22 @@
  * Please NOTE, that you should omit the .html extension
  * Please do the task in the scope of the file. Create a pull request a share it with your mentor.
  */
+
+const fs = require('fs');
+const path = require('path');
+
+const parcedObj=JSON.parse(fs.readFileSync('./test.json', 'utf-8'));
+const arr = [];
+
+getDocID();
+fs.writeFileSync('parsed.json', JSON.stringify(arr));
+
+function getDocID () {
+    for (let key in parcedObj.list.entries) {
+        const NewObj = {
+            docID: `http://doc.epam.com/${parcedObj.list.entries[key].entry.name.replace(/.html/g, "")}`
+        };
+        arr.push(NewObj);
+        }
+    return arr;
+}
